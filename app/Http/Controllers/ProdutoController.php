@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Produto;
+use App\Pedido;
+
+use App\ProdutoUpdates;
 
 class ProdutoController extends Controller
 {
+
+    use ProdutoUpdates;
+
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +21,9 @@ class ProdutoController extends Controller
     public function index()
     {
         $produtos = Produto::all();
+        $pedidos = Pedido::all();
 
-        return view('produtos.index', compact('produtos'));
+        return view('produtos.index', compact('produtos', 'pedidos'));
     }
 
     /**
@@ -117,4 +124,5 @@ class ProdutoController extends Controller
 
         return redirect('/produtos')->with('success', 'Produto deletado com sucesso.');
     }
+
 }
