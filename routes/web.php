@@ -16,3 +16,6 @@ Route::get('/', function () {
 });
 
 Route::resource('produtos', 'ProdutoController');
+Route::resource('pedidos', 'PedidoController');
+
+Route::get('pedidos/create/{id}/', 'PedidoController@create')->name('pedidos.create');

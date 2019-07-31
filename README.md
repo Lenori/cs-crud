@@ -1,36 +1,33 @@
-## Installation
+## Instalação
 
-Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/5.4/installation#installation)
+Por favor, confira a documntação oficial do Laravel antes de iniciar sua instalação. [Documentação oficial](https://laravel.com/docs/5.4/installation#installation)
 
+Clone o respositório
 
-Clone the repository
+    git clone https://github.com/Lenori/cs-crud
 
-    git clone git@github.com:gothinkster/laravel-realworld-example-app.git
+Entre na pasta do repositório
 
-Switch to the repo folder
+    cd cs-crud
 
-    cd laravel-realworld-example-app
-
-Install all the dependencies using composer
+Instale todas as dependências usando o composer
 
     composer install
 
-Copy the example env file and make the required configuration changes in the .env file
+Faça uma cópia do arquivo de exemplo env e faça as configurações necessárias de conexão ao MySql (DB_HOST, DB_USERNAME, DB_PASSWORD & DB_DATABASE)
 
     cp .env.example .env
 
-Generate a new application key
-
-    php artisan key:generate
-
-Generate a new JWT authentication secret key
-
-    php artisan jwt:generate
-
-Run the database migrations (**Set the database connection in .env before migrating**)
+Execute as migrations do banco de dados (**Configure a conexão antes de fazer a migration**)
 
     php artisan migrate
 
-Start the local development server
+Inicie seu servidor
 
     php artisan serve
+	
+## Usando o sistema
+
+A url /produtos é o seu ponto de partida. Lá você vai poder criar novos produtos e comprar caso os mesmos tenham estoque suficiente.
+
+Nesta mesma tela você vai poder editar e excluir os pedidos existentes no seu banco de dados.
